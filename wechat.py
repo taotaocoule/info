@@ -30,18 +30,22 @@ def subscribe(wechat):
 	data=target.string
 	p=re.compile(r'var msgList =(.*?);\r\n')
 	q=p.findall(data)
-	z=json.loads(q[0])
-	d=z['list']
-	for i in d:
-		s=i['app_msg_ext_info']
-		t=s['multi_app_msg_item_list']	
-		titles.append(s['title'])
-		contents.append(s['digest'])
-		urls.append(s['content_url'].replace('&amp;','&'))
-		for j in t:
-			titles.append(j['title'])
-			contents.append(j['digest'])
-			urls.append(j['content_url'].replace('&amp;','&'))
-	result={}
-	result[wechat]=[titles,contents,urls]
-	return result	
+	try:
+		z=json.loads(q[0])
+	except:
+		print('Need verification code:  {}'.format(s))
+	else:	
+		d=z['list']
+		for i in d:
+			s=i['app_msg_ext_info']
+			t=s['multi_app_msg_item_list']	
+			titles.append(s['title'])
+			contents.append(s['digest'])
+			urls.append(s['content_url'].replace('&amp;','&'))
+			for j in t:
+				titles.append(j['title'])
+				contents.append(j['digest'])
+				urls.append(j['content_url'].replace('&amp;','&'))
+		result={}
+		result[wechat]=[titles,contents,urls]
+		return result	
