@@ -1,0 +1,23 @@
+{
+  "name": "Friends",
+  "homepage": "https://github.com/taotaocoule/Friends",
+  "authors": [
+    "zhangtian"
+  ],
+  "description": "javascript modules for Friends",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.3",
+    "lodash": "^4.17.4",
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}

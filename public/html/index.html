@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friends</title>
+	<script type="text/javascript" src="../js/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="../js/bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-app='info'>
+  <div ng-controller='wechat'>
+  	<ul>
+  		<li ng-repeat="data in wechatData">
+  			<a href="{{data.url}}" title="{{data.digest}}" target="_blank">{{data.title}}</a>
+  		</li>
+  	</ul>
+  </div>
+</body>
+</html>
