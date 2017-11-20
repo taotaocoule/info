@@ -11,4 +11,10 @@ import scrapy
 class NewsItem(scrapy.Item):
     title = scrapy.Field()
     link = scrapy.Field()
-    detail = scrapy.Field()
+    image = scrapy.Field()
+
+class Bankuai(scrapy.Item):
+	name = scrapy.Field()
+	link = scrapy.Field()
+	image = scrapy.Field()
+	catagory = scrapy.Field()
